@@ -69,7 +69,11 @@ import "POGOProtos/Settings/Master/BuddyHungerSettings.proto";
 import "POGOProtos/Settings/Master/AvatarGroupOrderSettings.proto";
 import "POGOProtos/Settings/Master/MonodepthSettings.proto";
 import "POGOProtos/Settings/Master/RaidClientSettings.proto";
+import "POGOProtos/Settings/Master/SponsoredGeofenceGiftSettings.proto";
+import "POGOProtos/Settings/Master/CrossGameSocialSettings.proto";
 import "POGOProtos/Data/Sticker/StickerMetadata.proto";
+import "POGOProtos/Settings/Master/MapDisplaySettings.proto";
+import "POGOProtos/Settings/Master/ArTelemetrySettings.proto";
 
 message DownloadItemTemplatesResponse {
 	Result result = 1;
@@ -148,7 +152,11 @@ message DownloadItemTemplatesResponse {
 		.POGOProtos.Settings.Master.AvatarGroupOrderSettings avatar_group_order_settings = 76;
 		.POGOProtos.Settings.Master.MonodepthSettings monodepth_settings = 78;
 		.POGOProtos.Settings.Master.RaidClientSettings raid_settings_proto = 81;
+		.POGOProtos.Settings.Master.SponsoredGeofenceGiftSettings sponsored_geofence_gift_settings = 84;
 		.POGOProtos.Data.Sticker.StickerMetadata sticker_metadata = 85;
+		.POGOProtos.Settings.Master.CrossGameSocialSettings cross_game_social_settings = 86;
+		.POGOProtos.Settings.Master.MapDisplaySettings map_display_settings = 87;
+		.POGOProtos.Settings.Master.ArTelemetrySettings ar_telemetry_settings = 90;
 
 		message ProjectVacation {
 			bool enable2020 = 1;
