@@ -1091,6 +1091,7 @@ import public "Networking/Responses/Vasa/Responses/ReportAdInteractionResponse.p
 import public "Networking/Responses/VerifyChallengeResponse.proto";
 import public "Networking/Responses/VsSeekerRewardEncounterResponse.proto";
 import public "Networking/Responses/VsSeekerStartMatchmakingResponse.proto";
+import public "Rpc/Rpc.proto";
 import public "Settings/AccountSettings.proto";
 import public "Settings/AdventureSyncSettings.proto";
 import public "Settings/ArdkConfigSettings.proto";
