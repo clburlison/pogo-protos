@@ -360,6 +360,7 @@ import public "Enums/PokedexGenerationId.proto";
 import public "Enums/PokemonAnim.proto";
 import public "Enums/PokemonClass.proto";
 import public "Enums/PokemonCreateContext.proto";
+import public "Enums/PokemonEvolution.proto";
 import public "Enums/PokemonFamilyId.proto";
 import public "Enums/PokemonGoPlusIds.proto";
 import public "Enums/PokemonId.proto";
