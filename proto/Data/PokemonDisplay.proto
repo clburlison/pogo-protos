@@ -4,8 +4,8 @@ package POGOProtos.Data;
 import "POGOProtos/Enums/Costume.proto";
 import "POGOProtos/Enums/Form.proto";
 import "POGOProtos/Enums/Gender.proto";
-import "POGOProtos/Enums/PokemonEvolution.proto";
 import "POGOProtos/Enums/WeatherCondition.proto";
+import "POGOProtos/Enums/PokemonEvolution.proto";
 
 message PokemonDisplay {
 	.POGOProtos.Enums.Costume costume = 1;

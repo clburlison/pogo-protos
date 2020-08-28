@@ -2,8 +2,8 @@ syntax = "proto3";
 package POGOProtos.Enums;
 
 enum PokemonEvolution {
-    EVOLUTION_UNSET = 0;
-    EVOLUTION_MEGA = 1;
-    EVOLUTION_MEGA_X = 2;
-    EVOLUTION_MEGA_Y = 3;
+	EVOLUTION_UNSET = 0;
+	EVOLUTION_MEGA = 1;
+	EVOLUTION_MEGA_X = 2;
+	EVOLUTION_MEGA_Y = 3;
 }
