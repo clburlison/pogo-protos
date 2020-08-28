@@ -1248,5 +1248,3 @@ import public "Settings/TranslationSettings.proto";
 import public "Settings/UpsightLoggingSettings.proto";
 import public "Settings/WeatherAlertSettings.proto";
 import public "Settings/WeatherSettings.proto";
-import public "Tools/AssetDigestDecoderTool.proto";
-import public "Tools/GameMasterDecoderTool.proto";
