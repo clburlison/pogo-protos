@@ -132,7 +132,6 @@ import public "Data/Logs/TradingLogEntry.proto";
 import public "Data/Logs/VsSeekerCompleteSeasonLogEntry.proto";
 import public "Data/Logs/VsSeekerSetLogEntry.proto";
 import public "Data/Logs/VsSeekerWinRewardsLogEntry.proto";
-import public "Data/Map/MapCompositionRoot.proto";
 import public "Data/Map/MapTileBundle.proto";
 import public "Data/News/CurrentNews.proto";
 import public "Data/News/NewsArticle.proto";
