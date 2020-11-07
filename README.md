@@ -1,12 +1,10 @@
 # node-pogo-protos
 Uses [protobuf.js](https://github.com/dcodeIO/protobuf.js) to compile the Protobuf files from
-[POGOProtos](https://github.com/AeonLucid/POGOProtos) into an easy to use Node module.
+[POGOProtos](https://github.com/Furtif/POGOProtos) into an easy to use Node module.
 
 [![npm version](https://badge.fury.io/js/pogo-protos.svg)](https://badge.fury.io/js/pogo-protos)
 ![npm downloads](https://img.shields.io/npm/dt/pogo-protos.svg)
-![dependencies](https://david-dm.org/pogosandbox/pogo-protos.svg)
 ![license](https://img.shields.io/npm/l/pogo-protos.svg)
-![build](https://travis-ci.org/pogosandbox/pogo-protos.svg?branch=master)
 
 
 ## How to use
