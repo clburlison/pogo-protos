@@ -13,6 +13,9 @@
 *	BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
 *	or implied. See the License for the specific language governing
 *	permissions and limitations under the License.
+*
+* Version: 0.195.2
+*
 */
 
 syntax = "proto3";
@@ -4493,26 +4496,6 @@ message AttackRaidBattleProto {
 	BattleActionProto last_retrieved_action = 4;
 	int64 timestamp_ms = 5;
 	AdTargetingInfoProto ad_targeting_info = 6;
-}
-
-message AuthInfo {
-	string provider = 1;
-	JWT token = 2;
-	AuthOptions options = 3;
-	message JWT {
-		string contents = 1;
-		int32 unknown2 = 2;
-	}
-
-	message AuthOptions {
-		bool prevent_account_creation = 1;
-	}
-}
-
-message AuthTicket {
-	bytes start = 1;
-	uint64 expire_timestamp_ms = 2;
-	bytes end = 3;
 }
 
 message AvailableSkuProto {
@@ -14552,7 +14535,7 @@ message PokemonProto {
 	repeated HoloTemporaryEvolutionId mega_evolved_forms = 63;
 	repeated PokemonEvolutionQuestProto evolution_quest_info = 64;
 	PokemonCreateDetail origin_detail = 66;
-	repeated fixed64 pokemon_tag_ids = 67;
+	repeated uint64 pokemon_tag_ids = 67;
 	repeated string origin_events = 68;
 	EggSlotType egg_slot_type = 69;
 	EggTelemetryProto egg_telemetry = 70;
