@@ -3,6 +3,17 @@ export namespace POGOProtos {
 
     namespace Rpc {
 
+        enum AA_NEW_ENUM_0 {
+            AA_NEW_ENUM_0_NORMAL = 0,
+            AA_NEW_ENUM_0_CALL_TO_ACTION = 1
+        }
+
+        enum AA_NEW_ENUM_1 {
+            AA_NEW_ENUM_1_POI = 0,
+            AA_NEW_ENUM_1_GIFT = 1,
+            AA_NEW_ENUM_1_NEARBY_POKEMON = 2
+        }
+
         enum AdFeedbackComplaintReason {
             AD_FEEDBACK_COMPLAINT_REASON_INVALID = 0,
             AD_FEEDBACK_COMPLAINT_REASON_OFFENSIVE = 1,
@@ -3257,6 +3268,12 @@ export namespace POGOProtos {
             POKEDEX_GENERATION_ID_ALL = 5001
         }
 
+        enum PokemonAlignment {
+            POKEMON_ALIGNMENT_ALIGNMENT_UNSET = 0,
+            POKEMON_ALIGNMENT_SHADOW = 1,
+            POKEMON_ALIGNMENT_PURIFIED = 2
+        }
+
         enum PokemonAnim {
             POKEMON_ANIM_NONE = 0,
             POKEMON_ANIM_IDLE_01 = 1,
@@ -3281,6 +3298,13 @@ export namespace POGOProtos {
             CREATE_CONTEXT_WILD = 0,
             CREATE_CONTEXT_EGG = 1,
             CREATE_CONTEXT_EVOLVE = 2
+        }
+
+        enum PokemonGender {
+            POKEMON_GENDER_GENDER_UNSET = 0,
+            POKEMON_GENDER_MALE = 1,
+            POKEMON_GENDER_FEMALE = 2,
+            POKEMON_GENDER_GENDERLESS = 3
         }
 
         enum PokemonGoPlusIds {
@@ -3636,6 +3660,16 @@ export namespace POGOProtos {
             STORE_APPLE = 1,
             STORE_GOOGLE = 2,
             STORE_SAMSUNG = 3
+        }
+
+        enum SubscriptionState {
+            SUBSCRIPTION_STATE_UNKNOWN = 0,
+            SUBSCRIPTION_STATE_ACTIVE = 1,
+            SUBSCRIPTION_STATE_CANCELLED = 2,
+            SUBSCRIPTION_STATE_EXPIRED = 3,
+            SUBSCRIPTION_STATE_GRACE_PERIOD = 4,
+            SUBSCRIPTION_STATE_FREE_TRIAL = 5,
+            SUBSCRIPTION_STATE_PENDING_PURCHASE = 6
         }
 
         enum Team {
@@ -5317,6 +5351,7 @@ export namespace POGOProtos {
             game_item_content?: (POGOProtos.Rpc.IGameItemContentProto[]|null);
             presentation_data?: (POGOProtos.Rpc.ISkuPresentationProto[]|null);
             can_be_purchased?: (boolean|null);
+            subscription_id?: (string|null);
         }
 
         class AvailableSkuProto implements IAvailableSkuProto {
@@ -5328,6 +5363,7 @@ export namespace POGOProtos {
             public game_item_content: POGOProtos.Rpc.IGameItemContentProto[];
             public presentation_data: POGOProtos.Rpc.ISkuPresentationProto[];
             public can_be_purchased: boolean;
+            public subscription_id: string;
             public static encode(message: POGOProtos.Rpc.IAvailableSkuProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.AvailableSkuProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.AvailableSkuProto;
@@ -23329,14 +23365,6 @@ export namespace POGOProtos {
 
         namespace PoiSubmissionTelemetry {
 
-            enum PoiCameraStepIds {
-                UNSET = 0,
-                ENTER = 1,
-                RETAKE = 2,
-                CONFIRM = 3,
-                EXIT = 4
-            }
-
             enum PoiSubmissionGuiEventId {
                 UNKNOWN = 0,
                 POI_NOMINATION_ENTER = 1,
@@ -23352,8 +23380,15 @@ export namespace POGOProtos {
                 POI_DETAILS_CONFIRM = 11,
                 POI_SUPPORTINGINFO_ENTER = 12,
                 POI_SUBMIT_BUTTON_HIT = 13,
-                POI_EXIT_BUTTON_HIT = 14,
-                POI_NOMINATION_GUIDELINES_HIT = 15
+                POI_EXIT_BUTTON_HIT = 14
+            }
+
+            enum PoiCameraStepIds {
+                UNSET = 0,
+                ENTER = 1,
+                RETAKE = 2,
+                CONFIRM = 3,
+                EXIT = 4
             }
         }
 
@@ -28787,11 +28822,13 @@ export namespace POGOProtos {
         }
 
         interface IRedeemSamsungReceiptOutProto {
+            status?: (POGOProtos.Rpc.RedeemSamsungReceiptOutProto.Status|null);
             purchase_id?: (string|null);
         }
 
         class RedeemSamsungReceiptOutProto implements IRedeemSamsungReceiptOutProto {
             constructor(properties?: POGOProtos.Rpc.IRedeemSamsungReceiptOutProto);
+            public status: POGOProtos.Rpc.RedeemSamsungReceiptOutProto.Status;
             public purchase_id: string;
             public static encode(message: POGOProtos.Rpc.IRedeemSamsungReceiptOutProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.RedeemSamsungReceiptOutProto;
@@ -29262,20 +29299,6 @@ export namespace POGOProtos {
 
         namespace ReportAdInteractionProto {
 
-            interface ICTAClickInteraction {
-                cta_url?: (string|null);
-            }
-
-            class CTAClickInteraction implements ICTAClickInteraction {
-                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.ICTAClickInteraction);
-                public cta_url: string;
-                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.ICTAClickInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction;
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction;
-                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
-                public toJSON(): { [k: string]: any };
-            }
-
             interface IFullScreenInteraction {
                 fullscreen_image_url?: (string|null);
                 total_residence_time_ms?: (number|Long|null);
@@ -29293,6 +29316,20 @@ export namespace POGOProtos {
                 public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.FullScreenInteraction;
                 public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.FullScreenInteraction;
                 public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.FullScreenInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            interface ICTAClickInteraction {
+                cta_url?: (string|null);
+            }
+
+            class CTAClickInteraction implements ICTAClickInteraction {
+                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.ICTAClickInteraction);
+                public cta_url: string;
+                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.ICTAClickInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction;
+                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
                 public toJSON(): { [k: string]: any };
             }
 

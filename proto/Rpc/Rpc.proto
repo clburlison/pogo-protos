@@ -1,5 +1,5 @@
 /*
-* Copyright 2016-2020 --=FurtiF=--.
+* Copyright 2016-2021 --=FurtiF=--.
 *
 * Licensed under the
 *	Educational Community License, Version 2.0 (the "License"); you may
@@ -14,12 +14,23 @@
 *	or implied. See the License for the specific language governing
 *	permissions and limitations under the License.
 *
-* Version: 0.195.2
+* Version: 0.197.0
 *
 */
 
 syntax = "proto3";
 package POGOProtos.Rpc;
+
+enum AA_NEW_ENUM_0 {
+	AA_NEW_ENUM_0_NORMAL = 0;
+	AA_NEW_ENUM_0_CALL_TO_ACTION = 1;
+}
+
+enum AA_NEW_ENUM_1 {
+	AA_NEW_ENUM_1_POI = 0;
+	AA_NEW_ENUM_1_GIFT = 1;
+	AA_NEW_ENUM_1_NEARBY_POKEMON = 2;
+}
 
 enum AdFeedbackComplaintReason {
 	AD_FEEDBACK_COMPLAINT_REASON_INVALID = 0;
@@ -3275,6 +3286,12 @@ enum PokedexGenerationId {
 	POKEDEX_GENERATION_ID_ALL = 5001;
 }
 
+enum PokemonAlignment {
+	POKEMON_ALIGNMENT_ALIGNMENT_UNSET = 0;
+	POKEMON_ALIGNMENT_SHADOW = 1;
+	POKEMON_ALIGNMENT_PURIFIED = 2;
+}
+
 enum PokemonAnim {
 	POKEMON_ANIM_NONE = 0;
 	POKEMON_ANIM_IDLE_01 = 1;
@@ -3299,6 +3316,13 @@ enum PokemonCreateContext {
 	CREATE_CONTEXT_WILD = 0;
 	CREATE_CONTEXT_EGG = 1;
 	CREATE_CONTEXT_EVOLVE = 2;
+}
+
+enum PokemonGender {
+	POKEMON_GENDER_GENDER_UNSET = 0;
+	POKEMON_GENDER_MALE = 1;
+	POKEMON_GENDER_FEMALE = 2;
+	POKEMON_GENDER_GENDERLESS = 3;
 }
 
 enum PokemonGoPlusIds {
@@ -3654,6 +3678,16 @@ enum Store {
 	STORE_APPLE = 1;
 	STORE_GOOGLE = 2;
 	STORE_SAMSUNG = 3;
+}
+
+enum SubscriptionState {
+	SUBSCRIPTION_STATE_UNKNOWN = 0;
+	SUBSCRIPTION_STATE_ACTIVE = 1;
+	SUBSCRIPTION_STATE_CANCELLED = 2;
+	SUBSCRIPTION_STATE_EXPIRED = 3;
+	SUBSCRIPTION_STATE_GRACE_PERIOD = 4;
+	SUBSCRIPTION_STATE_FREE_TRIAL = 5;
+	SUBSCRIPTION_STATE_PENDING_PURCHASE = 6;
 }
 
 enum Team {
@@ -4506,6 +4540,7 @@ message AvailableSkuProto {
 	repeated GameItemContentProto game_item_content = 5;
 	repeated SkuPresentationProto presentation_data = 6;
 	bool can_be_purchased = 7;
+	string subscription_id = 8;
 }
 
 message AvailableSubmissionsPerSubmissionType {
@@ -11942,14 +11977,6 @@ message PoiSubmissionPhotoUploadErrorTelemetry {
 }
 
 message PoiSubmissionTelemetry {
-	enum PoiCameraStepIds {
-		UNSET = 0;
-		ENTER = 1;
-		RETAKE = 2;
-		CONFIRM = 3;
-		EXIT = 4;
-	}
-
 	enum PoiSubmissionGuiEventId {
 		UNKNOWN = 0;
 		POI_NOMINATION_ENTER = 1;
@@ -11966,7 +11993,14 @@ message PoiSubmissionTelemetry {
 		POI_SUPPORTINGINFO_ENTER = 12;
 		POI_SUBMIT_BUTTON_HIT = 13;
 		POI_EXIT_BUTTON_HIT = 14;
-		POI_NOMINATION_GUIDELINES_HIT = 15;
+	}
+
+	enum PoiCameraStepIds {
+		UNSET = 0;
+		ENTER = 1;
+		RETAKE = 2;
+		CONFIRM = 3;
+		EXIT = 4;
 	}
 
 	PoiSubmissionGuiEventId gui_event_id = 1;
@@ -15567,7 +15601,8 @@ message RedeemSamsungReceiptOutProto {
 		FAILURE = 2;
 	}
 
-	string purchase_id = 1;
+	Status status = 1;
+	string purchase_id = 2;
 }
 
 message RedeemSamsungReceiptProto {
@@ -15739,15 +15774,15 @@ message ReportAdInteractionProto {
 		CTAClickInteraction cta_clicked = 8;
 	}
 
-	message CTAClickInteraction {
-		string cta_url = 6;
-	}
-
 	message FullScreenInteraction {
 		string fullscreen_image_url = 1;
 		int64 total_residence_time_ms = 2;
 		int64 time_away_ms = 3;
 		bool took_screenshot = 4;
+	}
+
+	message CTAClickInteraction {
+		string cta_url = 6;
 	}
 
 	message ViewFullscreenInteraction {
