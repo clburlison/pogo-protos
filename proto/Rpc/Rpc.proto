@@ -5579,7 +5579,7 @@ message CatchPokemonOutProto {
 
 message CatchPokemonProto {
 	fixed64 encounter_id = 1;
-	int32 pokeball = 2;
+	Item pokeball = 2;
 	double normalized_reticle_size = 3;
 	string spawn_point_guid = 4;
 	bool hit_pokemon = 5;
@@ -5596,7 +5596,7 @@ message CatchPokemonQuestProto {
 message CatchPokemonTelemetry {
 	string status = 1;
 	EncounterPokemonTelemetry encounter_pokemon_telemetry = 2;
-	int32 balltype = 3;
+	Item balltype = 3;
 	int32 hit_grade = 4;
 	bool curve_ball = 5;
 	double miss_percent = 6;
@@ -10491,7 +10491,7 @@ message ItemSettingsProto {
 
 message ItemTelemetry {
 	ItemUseTelemetryIds item_use_click_id = 1;
-	int32 item_id = 2;
+	Item item_id = 2;
 	bool equipped = 3;
 	bool from_inventory = 4;
 	string item_id_string = 5;
@@ -14752,7 +14752,7 @@ message PokestopIncidentDisplayProto {
 }
 
 message PokestopReward {
-	int32 item_id = 1;
+	Item item_id = 1;
 	int32 item_count = 2;
 }
 

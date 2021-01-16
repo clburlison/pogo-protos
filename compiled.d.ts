@@ -7835,7 +7835,7 @@ export namespace POGOProtos {
 
         interface ICatchPokemonProto {
             encounter_id?: (number|Long|null);
-            pokeball?: (number|null);
+            pokeball?: (POGOProtos.Rpc.Item|null);
             normalized_reticle_size?: (number|null);
             spawn_point_guid?: (string|null);
             hit_pokemon?: (boolean|null);
@@ -7847,7 +7847,7 @@ export namespace POGOProtos {
         class CatchPokemonProto implements ICatchPokemonProto {
             constructor(properties?: POGOProtos.Rpc.ICatchPokemonProto);
             public encounter_id: (number|Long);
-            public pokeball: number;
+            public pokeball: POGOProtos.Rpc.Item;
             public normalized_reticle_size: number;
             public spawn_point_guid: string;
             public hit_pokemon: boolean;
@@ -7880,7 +7880,7 @@ export namespace POGOProtos {
         interface ICatchPokemonTelemetry {
             status?: (string|null);
             encounter_pokemon_telemetry?: (POGOProtos.Rpc.IEncounterPokemonTelemetry|null);
-            balltype?: (number|null);
+            balltype?: (POGOProtos.Rpc.Item|null);
             hit_grade?: (number|null);
             curve_ball?: (boolean|null);
             miss_percent?: (number|null);
@@ -7890,7 +7890,7 @@ export namespace POGOProtos {
             constructor(properties?: POGOProtos.Rpc.ICatchPokemonTelemetry);
             public status: string;
             public encounter_pokemon_telemetry?: (POGOProtos.Rpc.IEncounterPokemonTelemetry|null);
-            public balltype: number;
+            public balltype: POGOProtos.Rpc.Item;
             public hit_grade: number;
             public curve_ball: boolean;
             public miss_percent: number;
@@ -19706,7 +19706,7 @@ export namespace POGOProtos {
 
         interface IItemTelemetry {
             item_use_click_id?: (POGOProtos.Rpc.ItemUseTelemetryIds|null);
-            item_id?: (number|null);
+            item_id?: (POGOProtos.Rpc.Item|null);
             equipped?: (boolean|null);
             from_inventory?: (boolean|null);
             item_id_string?: (string|null);
@@ -19715,7 +19715,7 @@ export namespace POGOProtos {
         class ItemTelemetry implements IItemTelemetry {
             constructor(properties?: POGOProtos.Rpc.IItemTelemetry);
             public item_use_click_id: POGOProtos.Rpc.ItemUseTelemetryIds;
-            public item_id: number;
+            public item_id: POGOProtos.Rpc.Item;
             public equipped: boolean;
             public from_inventory: boolean;
             public item_id_string: string;
@@ -26890,13 +26890,13 @@ export namespace POGOProtos {
         }
 
         interface IPokestopReward {
-            item_id?: (number|null);
+            item_id?: (POGOProtos.Rpc.Item|null);
             item_count?: (number|null);
         }
 
         class PokestopReward implements IPokestopReward {
             constructor(properties?: POGOProtos.Rpc.IPokestopReward);
-            public item_id: number;
+            public item_id: POGOProtos.Rpc.Item;
             public item_count: number;
             public static encode(message: POGOProtos.Rpc.IPokestopReward, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.PokestopReward;
