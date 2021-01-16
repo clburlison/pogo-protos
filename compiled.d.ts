@@ -560,8 +560,8 @@ export namespace POGOProtos {
         }
 
         enum GameChatActions {
-            GAME_CHAT_ACTIONS_UNKNOWN_GAME_CHAT_ACTION = 0,
-            GAME_CHAT_ACTIONS_PROXY_CHAT_ACTION = 660000
+            UNKNOWN_GAME_CHAT_ACTION = 0,
+            PROXY_CHAT_ACTION = 660000
         }
 
         enum GenericClickTelemetryIds {
@@ -3269,7 +3269,7 @@ export namespace POGOProtos {
         }
 
         enum PokemonAlignment {
-            POKEMON_ALIGNMENT_ALIGNMENT_UNSET = 0,
+            POKEMON_ALIGNMENT_UNSET = 0,
             POKEMON_ALIGNMENT_SHADOW = 1,
             POKEMON_ALIGNMENT_PURIFIED = 2
         }
@@ -3301,7 +3301,7 @@ export namespace POGOProtos {
         }
 
         enum PokemonGender {
-            POKEMON_GENDER_GENDER_UNSET = 0,
+            POKEMON_GENDER_UNSET = 0,
             POKEMON_GENDER_MALE = 1,
             POKEMON_GENDER_FEMALE = 2,
             POKEMON_GENDER_GENDERLESS = 3
