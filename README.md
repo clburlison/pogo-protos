@@ -11,15 +11,15 @@ Uses [protobuf.js](https://github.com/dcodeIO/protobuf.js) to compile the Protob
 ```javascript
 const POGOProtos = require('pogo-protos');
 
-var myMessage = POGOProtos.Networking.Requests.Messages.RecycleInventoryItemMessage.fromObject({
-  item_id: POGOProtos.Inventory.Item.ItemId.ITEM_POTION,
-  count: 50
-});
-
-var encoded = POGOProtos.Networking.Requests.Messages.RecycleInventoryItemMessage.encode(myMessage).finish();
-
-var decodedAgain = POGOProtos.Networking.Requests.Messages.RecycleInventoryItemMessage.decode(encoded);
-console.log(decodedAgain.count); // will print 50
+var myMessage = POGOProtos.Rpc.RecycleItemProto.fromObject({
+    item_id: POGOProtos.Rpc.Item.ITEM_POTION,
+    count: 50
+  });
+  
+  var encoded = POGOProtos.Rpc.RecycleItemProto.encode(myMessage).finish();
+  
+  var decodedAgain = POGOProtos.Rpc.RecycleItemProto.decode(encoded);
+  console.log(decodedAgain.count); // will print 50
 ```
 
 For more details see the [protobuf.js documentation](https://github.com/dcodeIO/protobuf.js/wiki).
