@@ -31,18 +31,17 @@ var myMessage = POGOProtos.Rpc.RecycleItemProto.fromObject({
   
 var encoded = POGOProtos.Rpc.RecycleItemProto.encode(myMessage).finish();
 var decodedAgain = POGOProtos.Rpc.RecycleItemProto.decode(encoded);
-console.log('Test encode/decode:\nItem: ' + decodedAgain.item + ' count: ' + decodedAgain.count); // will print 50
-```
-### Out
-```
-We have 729 pokemons in protos.
-We have 47 costumes in protos.
-We have 2169 forms in protos.
-We have 275 badges in protos.
-We have 67 items in protos.
+console.log('Test encode/decode:\nItem: ' + decodedAgain.item + ' count: ' + decodedAgain.count);
+ 
+// will print:
+//We have 729 pokemons in protos.
+//We have 47 costumes in protos.
+//We have 2169 forms in protos.
+//We have 275 badges in protos.
+//We have 67 items in protos.
 
-Test encode/decode:
-Item: 101 count: 50
+//Test encode/decode:
+//Item: 101 count: 50
 ```
 
 For more details see the [protobuf.js documentation](https://github.com/dcodeIO/protobuf.js/wiki).
