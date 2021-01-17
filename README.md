@@ -1,4 +1,4 @@
-# node-pogo-protos
+# pogo-protos
 Uses [protobuf.js](https://github.com/dcodeIO/protobuf.js) to compile the Protobuf files from
 [POGOProtos](https://github.com/Furtif/POGOProtos) into an easy to use Node module.
 
