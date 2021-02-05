@@ -14530,10 +14530,12 @@ export namespace POGOProtos {
         }
 
         interface IGameplayWeatherProto {
+            gameplay_condition?: (POGOProtos.Rpc.GameplayWeatherProto.WeatherCondition|null);
         }
 
         class GameplayWeatherProto implements IGameplayWeatherProto {
             constructor(properties?: POGOProtos.Rpc.IGameplayWeatherProto);
+            public gameplay_condition: POGOProtos.Rpc.GameplayWeatherProto.WeatherCondition;
             public static encode(message: POGOProtos.Rpc.IGameplayWeatherProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.GameplayWeatherProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.GameplayWeatherProto;
@@ -35141,11 +35143,13 @@ export namespace POGOProtos {
         }
 
         interface IWeatherAlertProto {
+            severity?: (POGOProtos.Rpc.WeatherAlertProto.Severity|null);
             warn_weather?: (boolean|null);
         }
 
         class WeatherAlertProto implements IWeatherAlertProto {
             constructor(properties?: POGOProtos.Rpc.IWeatherAlertProto);
+            public severity: POGOProtos.Rpc.WeatherAlertProto.Severity;
             public warn_weather: boolean;
             public static encode(message: POGOProtos.Rpc.IWeatherAlertProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.WeatherAlertProto;

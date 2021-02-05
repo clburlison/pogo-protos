@@ -8405,6 +8405,8 @@ message GameplayWeatherProto {
 		SNOW = 6;
 		FOG = 7;
 	}
+
+	WeatherCondition gameplay_condition = 1;
 }
 
 message GcmToken {
@@ -18175,6 +18177,7 @@ message WeatherAlertProto {
 		EXTREME = 2;
 	}
 
+	Severity severity = 1;
 	bool warn_weather = 2;
 }
 
