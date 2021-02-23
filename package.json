@@ -1,6 +1,6 @@
 {
   "name": "pogo-protos",
-  "version": "2.53.6",
+  "version": "2.53.8",
   "description": "Pokémon Go Protobuf files from POGOProtos, wrapped up in a Node module",
   "main": "index.js",
   "repository": {
@@ -32,7 +32,6 @@
   "scripts": {
     "test": "node test/test.js",
     "build": "run-s compile minjs uglify tempjs ts",
-    "build_js_only": "run-s compile minjs uglify",
     "compile": "node proto/compile.js",
     "minjs": "pbjs --keep-case -t static-module --no-verify --no-create --no-delimited --no-beautify --no-comments -o compiled.js ./proto/POGOProtos.proto",
     "uglify": "uglifyjs compiled.js -o compiled.js",

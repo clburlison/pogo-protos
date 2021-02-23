@@ -2129,6 +2129,7 @@ export namespace POGOProtos {
             MELMETAL = 809,
             OBSTAGOON = 862,
             PERRSERKER = 863,
+            CURSOLA = 864,
             SIRFETCHD = 865,
             MR_RIME = 866,
             RUNERIGUS = 867
@@ -12408,6 +12409,20 @@ export namespace POGOProtos {
             public toJSON(): { [k: string]: any };
         }
 
+        interface IEggTransparencySettingsProto {
+            enable_egg_distribution?: (boolean|null);
+        }
+
+        class EggTransparencySettingsProto implements IEggTransparencySettingsProto {
+            constructor(properties?: POGOProtos.Rpc.IEggTransparencySettingsProto);
+            public enable_egg_distribution: boolean;
+            public static encode(message: POGOProtos.Rpc.IEggTransparencySettingsProto, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.EggTransparencySettingsProto;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.EggTransparencySettingsProto;
+            public static toObject(message: POGOProtos.Rpc.EggTransparencySettingsProto, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
+        }
+
         interface IEnabledPokemonSettingsProto {
             enabled_pokemon_range?: (POGOProtos.Rpc.EnabledPokemonSettingsProto.IRange[]|null);
         }
@@ -13095,6 +13110,7 @@ export namespace POGOProtos {
             temporary_evolution_energy_cost?: (number|null);
             temporary_evolution_energy_cost_subsequent?: (number|null);
             quest_display?: (POGOProtos.Rpc.IEvolutionQuestInfoProto[]|null);
+            only_upside_down?: (boolean|null);
         }
 
         class EvolutionBranchProto implements IEvolutionBranchProto {
@@ -13115,6 +13131,7 @@ export namespace POGOProtos {
             public temporary_evolution_energy_cost: number;
             public temporary_evolution_energy_cost_subsequent: number;
             public quest_display: POGOProtos.Rpc.IEvolutionQuestInfoProto[];
+            public only_upside_down: boolean;
             public static encode(message: POGOProtos.Rpc.IEvolutionBranchProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.EvolutionBranchProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.EvolutionBranchProto;
@@ -14409,6 +14426,7 @@ export namespace POGOProtos {
             pokemon_tag_settings?: (POGOProtos.Rpc.IPokemonTagSettingsProto|null);
             recommended_search_proto?: (POGOProtos.Rpc.IRecommendedSearchProto|null);
             inventory_settings?: (POGOProtos.Rpc.IInventorySettingsProto|null);
+            egg_transparency_settings?: (POGOProtos.Rpc.IEggTransparencySettingsProto|null);
             incident_priority_settings?: (POGOProtos.Rpc.IIncidentPrioritySettingsProto|null);
         }
 
@@ -14507,6 +14525,7 @@ export namespace POGOProtos {
             public pokemon_tag_settings?: (POGOProtos.Rpc.IPokemonTagSettingsProto|null);
             public recommended_search_proto?: (POGOProtos.Rpc.IRecommendedSearchProto|null);
             public inventory_settings?: (POGOProtos.Rpc.IInventorySettingsProto|null);
+            public egg_transparency_settings?: (POGOProtos.Rpc.IEggTransparencySettingsProto|null);
             public incident_priority_settings?: (POGOProtos.Rpc.IIncidentPrioritySettingsProto|null);
             public static encode(message: POGOProtos.Rpc.IGameMasterClientTemplateProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.GameMasterClientTemplateProto;
@@ -26413,6 +26432,9 @@ export namespace POGOProtos {
                 PERRSERKER_NORMAL = 2504,
                 PERRSERKER_SHADOW = 2505,
                 PERRSERKER_PURIFIED = 2506,
+                CURSOLA_NORMAL = 2507,
+                CURSOLA_SHADOW = 2508,
+                CURSOLA_PURIFIED = 2509,
                 SIRFETCHD_NORMAL = 2510,
                 SIRFETCHD_SHADOW = 2511,
                 SIRFETCHD_PURIFIED = 2512,
@@ -26424,6 +26446,7 @@ export namespace POGOProtos {
                 RUNERIGUS_PURIFIED = 2518,
                 SLOWPOKE_GALARIAN = 2582,
                 SLOWBRO_GALARIAN = 2583,
+                SLOWKING_GALARIAN = 2584,
                 LAPRAS_COSTUME_2020 = 2585,
                 GENGAR_COSTUME_2020 = 2586,
                 PYROAR_NORMAL = 2587,
@@ -29855,31 +29878,6 @@ export namespace POGOProtos {
 
         namespace ReportAdInteractionProto {
 
-            interface IAdSpawendInteraction {
-                ad_spawend_bool?: (boolean|null);
-                ad_inhibition?: (POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition|null);
-            }
-
-            class AdSpawendInteraction implements IAdSpawendInteraction {
-                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.IAdSpawendInteraction);
-                public ad_spawend_bool: boolean;
-                public ad_inhibition: POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition;
-                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.IAdSpawendInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction;
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction;
-                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
-                public toJSON(): { [k: string]: any };
-            }
-
-            namespace AdSpawendInteraction {
-
-                enum AdInhibition {
-                    AD_INHIBITION_UNKNOWN = 0,
-                    AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN = 1,
-                    AD_INHIBITION_CLIENT_ERROR = 2
-                }
-            }
-
             enum AdType {
                 AD_TYPE_UNKNOWN = 0,
                 AD_TYPE_SPONSORED_GIFT = 1,
@@ -29899,6 +29897,34 @@ export namespace POGOProtos {
                 public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction;
                 public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction;
                 public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            interface ICTAClickInteraction {
+                cta_url?: (string|null);
+            }
+
+            class CTAClickInteraction implements ICTAClickInteraction {
+                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.ICTAClickInteraction);
+                public cta_url: string;
+                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.ICTAClickInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction;
+                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            interface IViewFullscreenInteraction {
+                fullscreen_image_url?: (string|null);
+            }
+
+            class ViewFullscreenInteraction implements IViewFullscreenInteraction {
+                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.IViewFullscreenInteraction);
+                public fullscreen_image_url: string;
+                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.IViewFullscreenInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction;
+                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
                 public toJSON(): { [k: string]: any };
             }
 
@@ -29944,32 +29970,29 @@ export namespace POGOProtos {
                 public toJSON(): { [k: string]: any };
             }
 
-            interface IViewFullscreenInteraction {
-                fullscreen_image_url?: (string|null);
+            interface IAdSpawendInteraction {
+                ad_spawend_bool?: (boolean|null);
+                ad_inhibition?: (POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition|null);
             }
 
-            class ViewFullscreenInteraction implements IViewFullscreenInteraction {
-                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.IViewFullscreenInteraction);
-                public fullscreen_image_url: string;
-                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.IViewFullscreenInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction;
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction;
-                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            class AdSpawendInteraction implements IAdSpawendInteraction {
+                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.IAdSpawendInteraction);
+                public ad_spawend_bool: boolean;
+                public ad_inhibition: POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction.AdInhibition;
+                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.IAdSpawendInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction;
+                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.AdSpawendInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
                 public toJSON(): { [k: string]: any };
             }
 
-            interface ICTAClickInteraction {
-                cta_url?: (string|null);
-            }
+            namespace AdSpawendInteraction {
 
-            class CTAClickInteraction implements ICTAClickInteraction {
-                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.ICTAClickInteraction);
-                public cta_url: string;
-                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.ICTAClickInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction;
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction;
-                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
-                public toJSON(): { [k: string]: any };
+                enum AdInhibition {
+                    AD_INHIBITION_UNKNOWN = 0,
+                    AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN = 1,
+                    AD_INHIBITION_CLIENT_ERROR = 2
+                }
             }
         }
 

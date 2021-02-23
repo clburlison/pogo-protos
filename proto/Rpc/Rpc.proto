@@ -14,7 +14,7 @@
 *	or implied. See the License for the specific language governing
 *	permissions and limitations under the License.
 *
-* Version: 0.199.0
+* Version: 0.201.0
 *
 */
 
@@ -2147,6 +2147,7 @@ enum HoloPokemonId {
 	MELMETAL = 809;
 	OBSTAGOON = 862;
 	PERRSERKER = 863;
+	CURSOLA = 864;
 	SIRFETCHD = 865;
 	MR_RIME = 866;
 	RUNERIGUS = 867;
@@ -7418,6 +7419,10 @@ message EggTelemetryProto {
 	EggSlotType original_egg_slot_type = 2;
 }
 
+message EggTransparencySettingsProto {
+	bool enable_egg_distribution = 1;
+}
+
 message EnabledPokemonSettingsProto {
 	message Range {
 		int32 start = 1;
@@ -7797,6 +7802,7 @@ message EvolutionBranchProto {
 	int32 temporary_evolution_energy_cost = 15;
 	int32 temporary_evolution_energy_cost_subsequent = 16;
 	repeated EvolutionQuestInfoProto quest_display = 17;
+	bool only_upside_down = 18;
 }
 
 message EvolutionQuestInfoProto {
@@ -8387,6 +8393,7 @@ message GameMasterClientTemplateProto {
 	PokemonTagSettingsProto pokemon_tag_settings = 101;
 	RecommendedSearchProto recommended_search_proto = 102;
 	InventorySettingsProto inventory_settings = 103;
+	EggTransparencySettingsProto egg_transparency_settings = 105;
 	IncidentPrioritySettingsProto incident_priority_settings = 108;
 }
 
@@ -14498,6 +14505,9 @@ message PokemonDisplayProto {
 		PERRSERKER_NORMAL = 2504;
 		PERRSERKER_SHADOW = 2505;
 		PERRSERKER_PURIFIED = 2506;
+		CURSOLA_NORMAL = 2507;
+		CURSOLA_SHADOW = 2508;
+		CURSOLA_PURIFIED = 2509;
 		SIRFETCHD_NORMAL = 2510;
 		SIRFETCHD_SHADOW = 2511;
 		SIRFETCHD_PURIFIED = 2512;
@@ -14509,6 +14519,7 @@ message PokemonDisplayProto {
 		RUNERIGUS_PURIFIED = 2518;
 		SLOWPOKE_GALARIAN = 2582;
 		SLOWBRO_GALARIAN = 2583;
+		SLOWKING_GALARIAN = 2584;
 		LAPRAS_COSTUME_2020 = 2585;
 		GENGAR_COSTUME_2020 = 2586;
 		PYROAR_NORMAL = 2587;
@@ -16019,17 +16030,6 @@ message ReportAdInteractionProto {
 		AdDismissedInteraction ad_dismissed = 10;
 	}
 
-	message AdSpawendInteraction {
-		enum AdInhibition {
-			AD_INHIBITION_UNKNOWN = 0;
-			AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN = 1;
-			AD_INHIBITION_CLIENT_ERROR = 2;
-		}
-
-		bool ad_spawend_bool = 1;
-		AdInhibition ad_inhibition = 2;
-	}
-
 	enum AdType {
 		AD_TYPE_UNKNOWN = 0;
 		AD_TYPE_SPONSORED_GIFT = 1;
@@ -16039,6 +16039,14 @@ message ReportAdInteractionProto {
 	message ViewImpressionInteraction {
 		string preview_image_url = 1;
 		bool is_persisted_gift = 2;
+	}
+
+	message CTAClickInteraction {
+		string cta_url = 6;
+	}
+
+	message ViewFullscreenInteraction {
+		string fullscreen_image_url = 1;
 	}
 
 	message AdDismissedInteraction {
@@ -16057,12 +16065,15 @@ message ReportAdInteractionProto {
 		bool took_screenshot = 4;
 	}
 
-	message ViewFullscreenInteraction {
-		string fullscreen_image_url = 1;
-	}
+	message AdSpawendInteraction {
+		enum AdInhibition {
+			AD_INHIBITION_UNKNOWN = 0;
+			AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN = 1;
+			AD_INHIBITION_CLIENT_ERROR = 2;
+		}
 
-	message CTAClickInteraction {
-		string cta_url = 6;
+		bool ad_spawend_bool = 1;
+		AdInhibition ad_inhibition = 2;
 	}
 
 	string game_id = 1;
