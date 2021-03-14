@@ -14184,10 +14184,12 @@ export namespace POGOProtos {
         }
 
         interface IFortRenderingType {
+            rendering_type?: (POGOProtos.Rpc.FortRenderingType.RenderingType|null);
         }
 
         class FortRenderingType implements IFortRenderingType {
             constructor(properties?: POGOProtos.Rpc.IFortRenderingType);
+            public rendering_type: POGOProtos.Rpc.FortRenderingType.RenderingType;
             public static encode(message: POGOProtos.Rpc.IFortRenderingType, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.FortRenderingType;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.FortRenderingType;
@@ -14367,10 +14369,12 @@ export namespace POGOProtos {
         }
 
         interface IFortSponsor {
+            sponsor?: (POGOProtos.Rpc.FortSponsor.Sponsor|null);
         }
 
         class FortSponsor implements IFortSponsor {
             constructor(properties?: POGOProtos.Rpc.IFortSponsor);
+            public sponsor: POGOProtos.Rpc.FortSponsor.Sponsor;
             public static encode(message: POGOProtos.Rpc.IFortSponsor, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.FortSponsor;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.FortSponsor;
@@ -20341,10 +20345,12 @@ export namespace POGOProtos {
         }
 
         interface IInvasionStatus {
+            status?: (POGOProtos.Rpc.InvasionStatus.Status|null);
         }
 
         class InvasionStatus implements IInvasionStatus {
             constructor(properties?: POGOProtos.Rpc.IInvasionStatus);
+            public status: POGOProtos.Rpc.InvasionStatus.Status;
             public static encode(message: POGOProtos.Rpc.IInvasionStatus, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.InvasionStatus;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.InvasionStatus;
@@ -32914,10 +32920,12 @@ export namespace POGOProtos {
         }
 
         interface ISocialProto {
+            app_key?: (POGOProtos.Rpc.SocialProto.AppKey|null);
         }
 
         class SocialProto implements ISocialProto {
             constructor(properties?: POGOProtos.Rpc.ISocialProto);
+            public app_key: POGOProtos.Rpc.SocialProto.AppKey;
             public static encode(message: POGOProtos.Rpc.ISocialProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.SocialProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.SocialProto;
@@ -35923,10 +35931,12 @@ export namespace POGOProtos {
         }
 
         interface IVasaClientAction {
+            action?: (POGOProtos.Rpc.VasaClientAction.ActionEnum|null);
         }
 
         class VasaClientAction implements IVasaClientAction {
             constructor(properties?: POGOProtos.Rpc.IVasaClientAction);
+            public action: POGOProtos.Rpc.VasaClientAction.ActionEnum;
             public static encode(message: POGOProtos.Rpc.IVasaClientAction, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.VasaClientAction;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.VasaClientAction;
