@@ -16199,6 +16199,50 @@ export namespace POGOProtos {
             public toJSON(): { [k: string]: any };
         }
 
+        interface IGetGeofencedAdOutProto {
+            result?: (POGOProtos.Rpc.GetGeofencedAdOutProto.Result|null);
+            ad_details?: (POGOProtos.Rpc.IAdDetails|null);
+        }
+
+        class GetGeofencedAdOutProto implements IGetGeofencedAdOutProto {
+            constructor(properties?: POGOProtos.Rpc.IGetGeofencedAdOutProto);
+            public result: POGOProtos.Rpc.GetGeofencedAdOutProto.Result;
+            public ad_details?: (POGOProtos.Rpc.IAdDetails|null);
+            public static encode(message: POGOProtos.Rpc.IGetGeofencedAdOutProto, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.GetGeofencedAdOutProto;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.GetGeofencedAdOutProto;
+            public static toObject(message: POGOProtos.Rpc.GetGeofencedAdOutProto, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
+        }
+
+        namespace GetGeofencedAdOutProto {
+
+            enum Result {
+                UNSET = 0,
+                SUCCESS_AD_RECEIVED = 1,
+                SUCCESS_NO_ADS_AVAILABLE = 2,
+                ERROR_REQUEST_FAILED = 3
+            }
+        }
+
+        interface IGetGeofencedAdProto {
+            lat_degrees?: (number|null);
+            lng_degrees?: (number|null);
+            ad_targeting_info?: (POGOProtos.Rpc.IAdTargetingInfoProto|null);
+        }
+
+        class GetGeofencedAdProto implements IGetGeofencedAdProto {
+            constructor(properties?: POGOProtos.Rpc.IGetGeofencedAdProto);
+            public lat_degrees: number;
+            public lng_degrees: number;
+            public ad_targeting_info?: (POGOProtos.Rpc.IAdTargetingInfoProto|null);
+            public static encode(message: POGOProtos.Rpc.IGetGeofencedAdProto, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.GetGeofencedAdProto;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.GetGeofencedAdProto;
+            public static toObject(message: POGOProtos.Rpc.GetGeofencedAdProto, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
+        }
+
         interface IGetGiftBoxDetailsOutProto {
             result?: (POGOProtos.Rpc.GetGiftBoxDetailsOutProto.Result|null);
             gift_boxes?: (POGOProtos.Rpc.IGiftBoxDetailsProto[]|null);
@@ -30724,6 +30768,20 @@ export namespace POGOProtos {
                 AD_TYPE_SPONSORED_BALLOON = 2
             }
 
+            interface IViewFullscreenInteraction {
+                fullscreen_image_url?: (string|null);
+            }
+
+            class ViewFullscreenInteraction implements IViewFullscreenInteraction {
+                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.IViewFullscreenInteraction);
+                public fullscreen_image_url: string;
+                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.IViewFullscreenInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction;
+                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
             interface IAdDismissedInteraction {
                 ad_dismissal?: (POGOProtos.Rpc.ReportAdInteractionProto.AdDismissedInteraction.AdDismissal|null);
             }
@@ -30749,6 +30807,26 @@ export namespace POGOProtos {
                 }
             }
 
+            interface IFullScreenInteraction {
+                fullscreen_image_url?: (string|null);
+                total_residence_time_ms?: (number|Long|null);
+                time_away_ms?: (number|Long|null);
+                took_screenshot?: (boolean|null);
+            }
+
+            class FullScreenInteraction implements IFullScreenInteraction {
+                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.IFullScreenInteraction);
+                public fullscreen_image_url: string;
+                public total_residence_time_ms: (number|Long);
+                public time_away_ms: (number|Long);
+                public took_screenshot: boolean;
+                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.IFullScreenInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.FullScreenInteraction;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.FullScreenInteraction;
+                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.FullScreenInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
             interface IViewImpressionInteraction {
                 preview_image_url?: (string|null);
                 is_persisted_gift?: (boolean|null);
@@ -30762,6 +30840,20 @@ export namespace POGOProtos {
                 public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction;
                 public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction;
                 public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.ViewImpressionInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+
+            interface ICTAClickInteraction {
+                cta_url?: (string|null);
+            }
+
+            class CTAClickInteraction implements ICTAClickInteraction {
+                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.ICTAClickInteraction);
+                public cta_url: string;
+                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.ICTAClickInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction;
+                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
                 public toJSON(): { [k: string]: any };
             }
 
@@ -30790,54 +30882,6 @@ export namespace POGOProtos {
                     AD_INHIBITION_DISABLED_IN_GMT = 3,
                     AD_INHIBITION_PLAYER_OPTED_OUT_OF_ADS = 4
                 }
-            }
-
-            interface ICTAClickInteraction {
-                cta_url?: (string|null);
-            }
-
-            class CTAClickInteraction implements ICTAClickInteraction {
-                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.ICTAClickInteraction);
-                public cta_url: string;
-                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.ICTAClickInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction;
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction;
-                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.CTAClickInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
-                public toJSON(): { [k: string]: any };
-            }
-
-            interface IViewFullscreenInteraction {
-                fullscreen_image_url?: (string|null);
-            }
-
-            class ViewFullscreenInteraction implements IViewFullscreenInteraction {
-                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.IViewFullscreenInteraction);
-                public fullscreen_image_url: string;
-                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.IViewFullscreenInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction;
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction;
-                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.ViewFullscreenInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
-                public toJSON(): { [k: string]: any };
-            }
-
-            interface IFullScreenInteraction {
-                fullscreen_image_url?: (string|null);
-                total_residence_time_ms?: (number|Long|null);
-                time_away_ms?: (number|Long|null);
-                took_screenshot?: (boolean|null);
-            }
-
-            class FullScreenInteraction implements IFullScreenInteraction {
-                constructor(properties?: POGOProtos.Rpc.ReportAdInteractionProto.IFullScreenInteraction);
-                public fullscreen_image_url: string;
-                public total_residence_time_ms: (number|Long);
-                public time_away_ms: (number|Long);
-                public took_screenshot: boolean;
-                public static encode(message: POGOProtos.Rpc.ReportAdInteractionProto.IFullScreenInteraction, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ReportAdInteractionProto.FullScreenInteraction;
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ReportAdInteractionProto.FullScreenInteraction;
-                public static toObject(message: POGOProtos.Rpc.ReportAdInteractionProto.FullScreenInteraction, options?: $protobuf.IConversionOptions): { [k: string]: any };
-                public toJSON(): { [k: string]: any };
             }
         }
 
@@ -37059,50 +37103,6 @@ export namespace POGOProtos {
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.WithWinRaidStatusProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.WithWinRaidStatusProto;
             public static toObject(message: POGOProtos.Rpc.WithWinRaidStatusProto, options?: $protobuf.IConversionOptions): { [k: string]: any };
-            public toJSON(): { [k: string]: any };
-        }
-
-        interface IZZ_UNKONW_OUT_PROTO_0 {
-            result?: (POGOProtos.Rpc.ZZ_UNKONW_OUT_PROTO_0.Result|null);
-            ad_details?: (POGOProtos.Rpc.IAdDetails|null);
-        }
-
-        class ZZ_UNKONW_OUT_PROTO_0 implements IZZ_UNKONW_OUT_PROTO_0 {
-            constructor(properties?: POGOProtos.Rpc.IZZ_UNKONW_OUT_PROTO_0);
-            public result: POGOProtos.Rpc.ZZ_UNKONW_OUT_PROTO_0.Result;
-            public ad_details?: (POGOProtos.Rpc.IAdDetails|null);
-            public static encode(message: POGOProtos.Rpc.IZZ_UNKONW_OUT_PROTO_0, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ZZ_UNKONW_OUT_PROTO_0;
-            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ZZ_UNKONW_OUT_PROTO_0;
-            public static toObject(message: POGOProtos.Rpc.ZZ_UNKONW_OUT_PROTO_0, options?: $protobuf.IConversionOptions): { [k: string]: any };
-            public toJSON(): { [k: string]: any };
-        }
-
-        namespace ZZ_UNKONW_OUT_PROTO_0 {
-
-            enum Result {
-                UNSET = 0,
-                SUCCESS_AD_RECEIVED = 1,
-                SUCCESS_NO_ADS_AVAILABLE = 2,
-                ERROR_REQUEST_FAILED = 3
-            }
-        }
-
-        interface IZZ_UNKONW_PROTO_0 {
-            double_0?: (number|null);
-            double_1?: (number|null);
-            ad_targeting_info?: (POGOProtos.Rpc.IAdTargetingInfoProto|null);
-        }
-
-        class ZZ_UNKONW_PROTO_0 implements IZZ_UNKONW_PROTO_0 {
-            constructor(properties?: POGOProtos.Rpc.IZZ_UNKONW_PROTO_0);
-            public double_0: number;
-            public double_1: number;
-            public ad_targeting_info?: (POGOProtos.Rpc.IAdTargetingInfoProto|null);
-            public static encode(message: POGOProtos.Rpc.IZZ_UNKONW_PROTO_0, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.ZZ_UNKONW_PROTO_0;
-            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.ZZ_UNKONW_PROTO_0;
-            public static toObject(message: POGOProtos.Rpc.ZZ_UNKONW_PROTO_0, options?: $protobuf.IConversionOptions): { [k: string]: any };
             public toJSON(): { [k: string]: any };
         }
     }
