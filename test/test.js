@@ -8,6 +8,8 @@ const nbForms = Object.keys(POGOProtos.Rpc.PokemonDisplayProto.Form).length;
 console.log(`We have ${nbForms} forms in protos.`);
 const nbBadges = Object.keys(POGOProtos.Rpc.HoloBadgeType).length;
 console.log(`We have ${nbBadges} badges in protos.`);
+const nbMoves = Object.keys(POGOProtos.Rpc.HoloPokemonMove).length;
+console.log(`We have ${nbMoves} moves in protos.`);
 const nbItems = Object.keys(POGOProtos.Rpc.Item).length;
 console.log(`We have ${nbItems} items in protos.\n`);
 
