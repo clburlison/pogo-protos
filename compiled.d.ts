@@ -6016,24 +6016,6 @@ export namespace POGOProtos {
             }
         }
 
-        interface IBLDEHFIOCEM {
-            aklmcdhpbal?: (boolean|null);
-            ccnkdjpcice?: (string|null);
-            onbcieaoifo?: (string|null);
-        }
-
-        class BLDEHFIOCEM implements IBLDEHFIOCEM {
-            constructor(properties?: POGOProtos.Rpc.IBLDEHFIOCEM);
-            public aklmcdhpbal: boolean;
-            public ccnkdjpcice: string;
-            public onbcieaoifo: string;
-            public static encode(message: POGOProtos.Rpc.IBLDEHFIOCEM, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.BLDEHFIOCEM;
-            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.BLDEHFIOCEM;
-            public static toObject(message: POGOProtos.Rpc.BLDEHFIOCEM, options?: $protobuf.IConversionOptions): { [k: string]: any };
-            public toJSON(): { [k: string]: any };
-        }
-
         interface IBackgroundModeGlobalSettingsProto {
             min_player_level_fitness?: (number|null);
             service_prompt_timestamp_ms?: (number|Long|null);
@@ -6545,6 +6527,24 @@ export namespace POGOProtos {
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.BattleUpdateProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.BattleUpdateProto;
             public static toObject(message: POGOProtos.Rpc.BattleUpdateProto, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
+        }
+
+        interface IBattleVisualSettings {
+            enabled?: (boolean|null);
+            tx_stadium_1?: (string|null);
+            tx_stadium_2?: (string|null);
+        }
+
+        class BattleVisualSettings implements IBattleVisualSettings {
+            constructor(properties?: POGOProtos.Rpc.IBattleVisualSettings);
+            public enabled: boolean;
+            public tx_stadium_1: string;
+            public tx_stadium_2: string;
+            public static encode(message: POGOProtos.Rpc.IBattleVisualSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.BattleVisualSettings;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.BattleVisualSettings;
+            public static toObject(message: POGOProtos.Rpc.BattleVisualSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
             public toJSON(): { [k: string]: any };
         }
 
@@ -11817,50 +11817,6 @@ export namespace POGOProtos {
             public toJSON(): { [k: string]: any };
         }
 
-        interface IDJMDKKCACGH {
-            hkknaoofbgm?: (boolean|null);
-            opgcmcnmopo?: (boolean|null);
-            nempnoflgbd?: (boolean|null);
-            hpnhmbjoihh?: (boolean|null);
-            lknajlgojng?: (boolean|null);
-            nmdombdmjhb?: (boolean|null);
-            jgidpjfmebl?: (boolean|null);
-            eggcjcdopkp?: (boolean|null);
-            bocnepofghc?: (boolean|null);
-            aadnmgdjgio?: (boolean|null);
-            pldkldbepfh?: (boolean|null);
-            kkflpijciaf?: (boolean|null);
-            klmoafakfbd?: (boolean|null);
-            hfihkjgeded?: (boolean|null);
-            gphgikciddl?: (boolean|null);
-            lmabkeplden?: (number|null);
-        }
-
-        class DJMDKKCACGH implements IDJMDKKCACGH {
-            constructor(properties?: POGOProtos.Rpc.IDJMDKKCACGH);
-            public hkknaoofbgm: boolean;
-            public opgcmcnmopo: boolean;
-            public nempnoflgbd: boolean;
-            public hpnhmbjoihh: boolean;
-            public lknajlgojng: boolean;
-            public nmdombdmjhb: boolean;
-            public jgidpjfmebl: boolean;
-            public eggcjcdopkp: boolean;
-            public bocnepofghc: boolean;
-            public aadnmgdjgio: boolean;
-            public pldkldbepfh: boolean;
-            public kkflpijciaf: boolean;
-            public klmoafakfbd: boolean;
-            public hfihkjgeded: boolean;
-            public gphgikciddl: boolean;
-            public lmabkeplden: number;
-            public static encode(message: POGOProtos.Rpc.IDJMDKKCACGH, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.DJMDKKCACGH;
-            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.DJMDKKCACGH;
-            public static toObject(message: POGOProtos.Rpc.DJMDKKCACGH, options?: $protobuf.IConversionOptions): { [k: string]: any };
-            public toJSON(): { [k: string]: any };
-        }
-
         interface IDKJLGDDPKMH {
             lnddajhgaha?: (boolean|null);
         }
@@ -15290,9 +15246,9 @@ export namespace POGOProtos {
             referral_settings?: (POGOProtos.Rpc.IReferralSettingsProto|null);
             appraisal_star_threshold_settings?: (POGOProtos.Rpc.IAppraisalStarThresholdSettings|null);
             jpbjidnedif?: (POGOProtos.Rpc.ICIAHGKGEOBL|null);
-            dabgllckkok?: (POGOProtos.Rpc.IBLDEHFIOCEM|null);
+            battle_visual_settings?: (POGOProtos.Rpc.IBattleVisualSettings|null);
             addressable_pokemon_settings?: (POGOProtos.Rpc.IAddressablePokemonSettings|null);
-            hmmhchfeica?: (POGOProtos.Rpc.IDJMDKKCACGH|null);
+            verbose_log_raid_settings?: (POGOProtos.Rpc.IVerboseLogRaidSettings|null);
             gbchhlaknlm?: (POGOProtos.Rpc.IDKJLGDDPKMH|null);
             mcfoaegjppl?: (POGOProtos.Rpc.ICMFHAFEENOK|null);
             jdfcgncgmcl?: (POGOProtos.Rpc.IDHHOOBFHIHA|null);
@@ -15403,9 +15359,9 @@ export namespace POGOProtos {
             public referral_settings?: (POGOProtos.Rpc.IReferralSettingsProto|null);
             public appraisal_star_threshold_settings?: (POGOProtos.Rpc.IAppraisalStarThresholdSettings|null);
             public jpbjidnedif?: (POGOProtos.Rpc.ICIAHGKGEOBL|null);
-            public dabgllckkok?: (POGOProtos.Rpc.IBLDEHFIOCEM|null);
+            public battle_visual_settings?: (POGOProtos.Rpc.IBattleVisualSettings|null);
             public addressable_pokemon_settings?: (POGOProtos.Rpc.IAddressablePokemonSettings|null);
-            public hmmhchfeica?: (POGOProtos.Rpc.IDJMDKKCACGH|null);
+            public verbose_log_raid_settings?: (POGOProtos.Rpc.IVerboseLogRaidSettings|null);
             public gbchhlaknlm?: (POGOProtos.Rpc.IDKJLGDDPKMH|null);
             public mcfoaegjppl?: (POGOProtos.Rpc.ICMFHAFEENOK|null);
             public jdfcgncgmcl?: (POGOProtos.Rpc.IDHHOOBFHIHA|null);
@@ -37360,6 +37316,50 @@ export namespace POGOProtos {
                 INVALID_VASA_CLIENT_ACTION = 0,
                 COLLECT_ADID = 8000
             }
+        }
+
+        interface IVerboseLogRaidSettings {
+            verbose_raid_bool_1?: (boolean|null);
+            verbose_raid_bool_2?: (boolean|null);
+            verbose_raid_bool_3?: (boolean|null);
+            verbose_raid_bool_4?: (boolean|null);
+            verbose_raid_bool_5?: (boolean|null);
+            verbose_raid_bool_6?: (boolean|null);
+            verbose_raid_bool_7?: (boolean|null);
+            verbose_raid_bool_8?: (boolean|null);
+            verbose_raid_bool_9?: (boolean|null);
+            verbose_raid_bool_10?: (boolean|null);
+            verbose_raid_bool_11?: (boolean|null);
+            verbose_raid_bool_12?: (boolean|null);
+            verbose_raid_bool_13?: (boolean|null);
+            verbose_raid_bool_14?: (boolean|null);
+            verbose_raid_bool_15?: (boolean|null);
+            verbose_raid_int32?: (number|null);
+        }
+
+        class VerboseLogRaidSettings implements IVerboseLogRaidSettings {
+            constructor(properties?: POGOProtos.Rpc.IVerboseLogRaidSettings);
+            public verbose_raid_bool_1: boolean;
+            public verbose_raid_bool_2: boolean;
+            public verbose_raid_bool_3: boolean;
+            public verbose_raid_bool_4: boolean;
+            public verbose_raid_bool_5: boolean;
+            public verbose_raid_bool_6: boolean;
+            public verbose_raid_bool_7: boolean;
+            public verbose_raid_bool_8: boolean;
+            public verbose_raid_bool_9: boolean;
+            public verbose_raid_bool_10: boolean;
+            public verbose_raid_bool_11: boolean;
+            public verbose_raid_bool_12: boolean;
+            public verbose_raid_bool_13: boolean;
+            public verbose_raid_bool_14: boolean;
+            public verbose_raid_bool_15: boolean;
+            public verbose_raid_int32: number;
+            public static encode(message: POGOProtos.Rpc.IVerboseLogRaidSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.VerboseLogRaidSettings;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.VerboseLogRaidSettings;
+            public static toObject(message: POGOProtos.Rpc.VerboseLogRaidSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
         }
 
         interface IVerifyChallengeOutProto {

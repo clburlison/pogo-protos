@@ -11,7 +11,7 @@ Uses [protobuf.js](https://github.com/dcodeIO/protobuf.js) to compile the Protob
 
 ## How to use
 ```javascript
-const POGOProtos = require('pogo-protos');
+const POGOProtos = require('..');
 
 const nbPokemon = Object.keys(POGOProtos.Rpc.HoloPokemonId).length;
 console.log(`We have ${nbPokemon} pokemons in protos.`);
@@ -21,6 +21,8 @@ const nbForms = Object.keys(POGOProtos.Rpc.PokemonDisplayProto.Form).length;
 console.log(`We have ${nbForms} forms in protos.`);
 const nbBadges = Object.keys(POGOProtos.Rpc.HoloBadgeType).length;
 console.log(`We have ${nbBadges} badges in protos.`);
+const nbMoves = Object.keys(POGOProtos.Rpc.HoloPokemonMove).length;
+console.log(`We have ${nbMoves} moves in protos.`);
 const nbItems = Object.keys(POGOProtos.Rpc.Item).length;
 console.log(`We have ${nbItems} items in protos.\n`);
 
@@ -34,11 +36,12 @@ var decodedAgain = POGOProtos.Rpc.RecycleItemProto.decode(encoded);
 console.log('Test encode/decode:\nItem: ' + decodedAgain.item + ' count: ' + decodedAgain.count);
  
 // will print:
-//We have 729 pokemons in protos.
-//We have 47 costumes in protos.
-//We have 2169 forms in protos.
-//We have 275 badges in protos.
-//We have 67 items in protos.
+//We have x pokemons in protos.
+//We have x costumes in protos.
+//We have x forms in protos.
+//We have x badges in protos.
+//We have x moves in protos.
+//We have x items in protos.
 
 //Test encode/decode:
 //Item: 101 count: 50
