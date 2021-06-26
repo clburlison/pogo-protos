@@ -11,7 +11,7 @@ Uses [protobuf.js](https://github.com/dcodeIO/protobuf.js) to compile the Protob
 
 ## How to use
 ```javascript
-const POGOProtos = require('..');
+const POGOProtos = require('pogo-protos');
 
 const nbPokemon = Object.keys(POGOProtos.Rpc.HoloPokemonId).length;
 console.log(`We have ${nbPokemon} pokemons in protos.`);
