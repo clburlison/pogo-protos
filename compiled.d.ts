@@ -2483,7 +2483,8 @@ export namespace POGOProtos {
             DARK_VOID = 347,
             FEATHER_DANCE = 348,
             FIERY_DANCE = 349,
-            FAIRY_WIND_FAST = 350
+            FAIRY_WIND_FAST = 350,
+            RELIC_SONG = 351
         }
 
         enum HoloPokemonMovementType {
@@ -3201,12 +3202,14 @@ export namespace POGOProtos {
             ONBOARDING_EVENT_IDS_INTRO_DIALOG_COMPLETE = 31,
             ONBOARDING_EVENT_IDS_CATCH_DIALOG_COMPLETE = 32,
             ONBOARDING_EVENT_IDS_USERNAME_DIALOG_COMPLETE = 33,
-            ONBOARDING_EVENT_IDS_POKESTOP_DIALOG_COMPLETE = 34
+            ONBOARDING_EVENT_IDS_POKESTOP_DIALOG_COMPLETE = 34,
+            ONBOARDING_EVENT_IDS_ACCEPTED_TOS = 35
         }
 
         enum OnboardingPathIds {
             ONBOARDING_PATH_IDS_V1 = 0,
-            ONBOARDING_PATH_IDS_V2 = 1
+            ONBOARDING_PATH_IDS_V2 = 1,
+            ONBOARDING_PATH_IDS_VERSION_1 = 2
         }
 
         enum OnboardingType {
@@ -4043,6 +4046,22 @@ export namespace POGOProtos {
             WEB_TELEMETRY_IDS_POINT_OF_INTEREST_DESCRIPTION_WEB_CLICK = 1
         }
 
+        interface IAGJELDGLDLM {
+            hcfgdffdkbd?: (boolean|null);
+            mmdmnfgogcd?: (number|null);
+        }
+
+        class AGJELDGLDLM implements IAGJELDGLDLM {
+            constructor(properties?: POGOProtos.Rpc.IAGJELDGLDLM);
+            public hcfgdffdkbd: boolean;
+            public mmdmnfgogcd: number;
+            public static encode(message: POGOProtos.Rpc.IAGJELDGLDLM, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.AGJELDGLDLM;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.AGJELDGLDLM;
+            public static toObject(message: POGOProtos.Rpc.AGJELDGLDLM, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
+        }
+
         interface IARBuddyMultiplayerSessionTelemetry {
             camera_permission_granted?: (boolean|null);
             host_time_to_publish_first_map?: (number|Long|null);
@@ -4655,13 +4674,13 @@ export namespace POGOProtos {
         }
 
         interface IAddressablePokemonSettings {
-            value_int32?: (number|null);
+            count?: (number|null);
             pokemon_id?: (POGOProtos.Rpc.HoloPokemonId[]|null);
         }
 
         class AddressablePokemonSettings implements IAddressablePokemonSettings {
             constructor(properties?: POGOProtos.Rpc.IAddressablePokemonSettings);
-            public value_int32: number;
+            public count: number;
             public pokemon_id: POGOProtos.Rpc.HoloPokemonId[];
             public static encode(message: POGOProtos.Rpc.IAddressablePokemonSettings, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.AddressablePokemonSettings;
@@ -7005,6 +7024,20 @@ export namespace POGOProtos {
             public toJSON(): { [k: string]: any };
         }
 
+        interface IBranchingQuestProto {
+            rewards?: (POGOProtos.Rpc.IQuestRewardProto[]|null);
+        }
+
+        class BranchingQuestProto implements IBranchingQuestProto {
+            constructor(properties?: POGOProtos.Rpc.IBranchingQuestProto);
+            public rewards: POGOProtos.Rpc.IQuestRewardProto[];
+            public static encode(message: POGOProtos.Rpc.IBranchingQuestProto, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.BranchingQuestProto;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.BranchingQuestProto;
+            public static toObject(message: POGOProtos.Rpc.BranchingQuestProto, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
+        }
+
         interface IBreadcrumbRecordProto {
             timestamp_ms?: (number|Long|null);
             latitude_deg?: (number|null);
@@ -7906,43 +7939,6 @@ export namespace POGOProtos {
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.BuddyWalkSettings;
             public static toObject(message: POGOProtos.Rpc.BuddyWalkSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
             public toJSON(): { [k: string]: any };
-        }
-
-        interface ICIAHGKGEOBL {
-            nkaomjokegf?: (boolean|null);
-            fblhfnigknj?: (POGOProtos.Rpc.CIAHGKGEOBL.IPCDACNCAOEM[]|null);
-        }
-
-        class CIAHGKGEOBL implements ICIAHGKGEOBL {
-            constructor(properties?: POGOProtos.Rpc.ICIAHGKGEOBL);
-            public nkaomjokegf: boolean;
-            public fblhfnigknj: POGOProtos.Rpc.CIAHGKGEOBL.IPCDACNCAOEM[];
-            public static encode(message: POGOProtos.Rpc.ICIAHGKGEOBL, writer?: $protobuf.Writer): $protobuf.Writer;
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.CIAHGKGEOBL;
-            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.CIAHGKGEOBL;
-            public static toObject(message: POGOProtos.Rpc.CIAHGKGEOBL, options?: $protobuf.IConversionOptions): { [k: string]: any };
-            public toJSON(): { [k: string]: any };
-        }
-
-        namespace CIAHGKGEOBL {
-
-            interface IPCDACNCAOEM {
-                fgfohfjhcja?: (POGOProtos.Rpc.PokemonCategory|null);
-                dekbenjfbma?: (number|null);
-                gfbiicklceb?: (boolean|null);
-            }
-
-            class PCDACNCAOEM implements IPCDACNCAOEM {
-                constructor(properties?: POGOProtos.Rpc.CIAHGKGEOBL.IPCDACNCAOEM);
-                public fgfohfjhcja: POGOProtos.Rpc.PokemonCategory;
-                public dekbenjfbma: number;
-                public gfbiicklceb: boolean;
-                public static encode(message: POGOProtos.Rpc.CIAHGKGEOBL.IPCDACNCAOEM, writer?: $protobuf.Writer): $protobuf.Writer;
-                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.CIAHGKGEOBL.PCDACNCAOEM;
-                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.CIAHGKGEOBL.PCDACNCAOEM;
-                public static toObject(message: POGOProtos.Rpc.CIAHGKGEOBL.PCDACNCAOEM, options?: $protobuf.IConversionOptions): { [k: string]: any };
-                public toJSON(): { [k: string]: any };
-            }
         }
 
         interface ICMFHAFEENOK {
@@ -12219,7 +12215,8 @@ export namespace POGOProtos {
                 OPEN_EVENTS = 12,
                 OPEN_JOURNAL = 13,
                 OPEN_TIPS = 14,
-                OPEN_ITEM_INVENTORY = 15
+                OPEN_ITEM_INVENTORY = 15,
+                FILL_REFERRAL_CODE = 16
             }
 
             enum NearbyPokemonTab {
@@ -12248,16 +12245,16 @@ export namespace POGOProtos {
         interface IDeepLinkingSettingsProto {
             min_player_level_for_external_link?: (number|null);
             min_player_level_for_notification_link?: (number|null);
-            name_1?: (POGOProtos.Rpc.DeepLinkingEnumWrapperProto.DeepLinkingActionName[]|null);
-            name_2?: (POGOProtos.Rpc.DeepLinkingEnumWrapperProto.DeepLinkingActionName[]|null);
+            deep_linking_action_name_1?: (POGOProtos.Rpc.DeepLinkingEnumWrapperProto.DeepLinkingActionName[]|null);
+            deep_linking_action_name_2?: (POGOProtos.Rpc.DeepLinkingEnumWrapperProto.DeepLinkingActionName[]|null);
         }
 
         class DeepLinkingSettingsProto implements IDeepLinkingSettingsProto {
             constructor(properties?: POGOProtos.Rpc.IDeepLinkingSettingsProto);
             public min_player_level_for_external_link: number;
             public min_player_level_for_notification_link: number;
-            public name_1: POGOProtos.Rpc.DeepLinkingEnumWrapperProto.DeepLinkingActionName[];
-            public name_2: POGOProtos.Rpc.DeepLinkingEnumWrapperProto.DeepLinkingActionName[];
+            public deep_linking_action_name_1: POGOProtos.Rpc.DeepLinkingEnumWrapperProto.DeepLinkingActionName[];
+            public deep_linking_action_name_2: POGOProtos.Rpc.DeepLinkingEnumWrapperProto.DeepLinkingActionName[];
             public static encode(message: POGOProtos.Rpc.IDeepLinkingSettingsProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.DeepLinkingSettingsProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.DeepLinkingSettingsProto;
@@ -15245,7 +15242,7 @@ export namespace POGOProtos {
             incident_priority_settings?: (POGOProtos.Rpc.IIncidentPrioritySettingsProto|null);
             referral_settings?: (POGOProtos.Rpc.IReferralSettingsProto|null);
             appraisal_star_threshold_settings?: (POGOProtos.Rpc.IAppraisalStarThresholdSettings|null);
-            jpbjidnedif?: (POGOProtos.Rpc.ICIAHGKGEOBL|null);
+            pokedex_categories_settings?: (POGOProtos.Rpc.IPokedexCategoriesSettings|null);
             battle_visual_settings?: (POGOProtos.Rpc.IBattleVisualSettings|null);
             addressable_pokemon_settings?: (POGOProtos.Rpc.IAddressablePokemonSettings|null);
             verbose_log_raid_settings?: (POGOProtos.Rpc.IVerboseLogRaidSettings|null);
@@ -15253,6 +15250,7 @@ export namespace POGOProtos {
             mcfoaegjppl?: (POGOProtos.Rpc.ICMFHAFEENOK|null);
             jdfcgncgmcl?: (POGOProtos.Rpc.IDHHOOBFHIHA|null);
             cajbjadhmoi?: (POGOProtos.Rpc.IGELAPGEKOBH|null);
+            dfijlnhhajf?: (POGOProtos.Rpc.IAGJELDGLDLM|null);
         }
 
         class GameMasterClientTemplateProto implements IGameMasterClientTemplateProto {
@@ -15358,7 +15356,7 @@ export namespace POGOProtos {
             public incident_priority_settings?: (POGOProtos.Rpc.IIncidentPrioritySettingsProto|null);
             public referral_settings?: (POGOProtos.Rpc.IReferralSettingsProto|null);
             public appraisal_star_threshold_settings?: (POGOProtos.Rpc.IAppraisalStarThresholdSettings|null);
-            public jpbjidnedif?: (POGOProtos.Rpc.ICIAHGKGEOBL|null);
+            public pokedex_categories_settings?: (POGOProtos.Rpc.IPokedexCategoriesSettings|null);
             public battle_visual_settings?: (POGOProtos.Rpc.IBattleVisualSettings|null);
             public addressable_pokemon_settings?: (POGOProtos.Rpc.IAddressablePokemonSettings|null);
             public verbose_log_raid_settings?: (POGOProtos.Rpc.IVerboseLogRaidSettings|null);
@@ -15366,6 +15364,7 @@ export namespace POGOProtos {
             public mcfoaegjppl?: (POGOProtos.Rpc.ICMFHAFEENOK|null);
             public jdfcgncgmcl?: (POGOProtos.Rpc.IDHHOOBFHIHA|null);
             public cajbjadhmoi?: (POGOProtos.Rpc.IGELAPGEKOBH|null);
+            public dfijlnhhajf?: (POGOProtos.Rpc.IAGJELDGLDLM|null);
             public static encode(message: POGOProtos.Rpc.IGameMasterClientTemplateProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.GameMasterClientTemplateProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.GameMasterClientTemplateProto;
@@ -20890,6 +20889,8 @@ export namespace POGOProtos {
             model_name?: (string|null);
             tutorial_on_loss_string?: (string|null);
             is_male?: (boolean|null);
+            npc_display_settings_string_1?: (string|null);
+            npc_display_settings_string_2?: (string|null);
         }
 
         class InvasionNpcDisplaySettingsProto implements IInvasionNpcDisplaySettingsProto {
@@ -20903,6 +20904,8 @@ export namespace POGOProtos {
             public model_name: string;
             public tutorial_on_loss_string: string;
             public is_male: boolean;
+            public npc_display_settings_string_1: string;
+            public npc_display_settings_string_2: string;
             public static encode(message: POGOProtos.Rpc.IInvasionNpcDisplaySettingsProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.InvasionNpcDisplaySettingsProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.InvasionNpcDisplaySettingsProto;
@@ -23287,7 +23290,8 @@ export namespace POGOProtos {
             enum CollectType {
                 CATCH = 0,
                 TRADE = 1,
-                EVOLVE = 2
+                EVOLVE = 2,
+                CATCH_FROM_RAID = 3
             }
         }
 
@@ -25383,6 +25387,43 @@ export namespace POGOProtos {
             public toJSON(): { [k: string]: any };
         }
 
+        interface IPokedexCategoriesSettings {
+            enabled?: (boolean|null);
+            pokedex_category_data?: (POGOProtos.Rpc.PokedexCategoriesSettings.IPokedexCategoryData[]|null);
+        }
+
+        class PokedexCategoriesSettings implements IPokedexCategoriesSettings {
+            constructor(properties?: POGOProtos.Rpc.IPokedexCategoriesSettings);
+            public enabled: boolean;
+            public pokedex_category_data: POGOProtos.Rpc.PokedexCategoriesSettings.IPokedexCategoryData[];
+            public static encode(message: POGOProtos.Rpc.IPokedexCategoriesSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.PokedexCategoriesSettings;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.PokedexCategoriesSettings;
+            public static toObject(message: POGOProtos.Rpc.PokedexCategoriesSettings, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
+        }
+
+        namespace PokedexCategoriesSettings {
+
+            interface IPokedexCategoryData {
+                pokemon_category?: (POGOProtos.Rpc.PokemonCategory|null);
+                category_data_int32?: (number|null);
+                category_data_bool?: (boolean|null);
+            }
+
+            class PokedexCategoryData implements IPokedexCategoryData {
+                constructor(properties?: POGOProtos.Rpc.PokedexCategoriesSettings.IPokedexCategoryData);
+                public pokemon_category: POGOProtos.Rpc.PokemonCategory;
+                public category_data_int32: number;
+                public category_data_bool: boolean;
+                public static encode(message: POGOProtos.Rpc.PokedexCategoriesSettings.IPokedexCategoryData, writer?: $protobuf.Writer): $protobuf.Writer;
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.PokedexCategoriesSettings.PokedexCategoryData;
+                public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.PokedexCategoriesSettings.PokedexCategoryData;
+                public static toObject(message: POGOProtos.Rpc.PokedexCategoriesSettings.PokedexCategoryData, options?: $protobuf.IConversionOptions): { [k: string]: any };
+                public toJSON(): { [k: string]: any };
+            }
+        }
+
         interface IPokedexCategoryMilestoneProto {
             pokemon_category?: (POGOProtos.Rpc.PokemonCategory|null);
             status?: (POGOProtos.Rpc.PokedexCategoryMilestoneProto.Status|null);
@@ -25442,7 +25483,7 @@ export namespace POGOProtos {
             times_purified?: (number|null);
             temp_evo_data?: (POGOProtos.Rpc.PokedexEntryProto.ITempEvoData[]|null);
             captured_shiny_forms?: (POGOProtos.Rpc.PokemonDisplayProto.Form[]|null);
-            egceabiaoec?: ({ [k: string]: POGOProtos.Rpc.PokedexEntryProto.IPokemonCategoryData }|null);
+            pokemon_category_data?: ({ [k: string]: POGOProtos.Rpc.PokedexEntryProto.IPokemonCategoryData }|null);
         }
 
         class PokedexEntryProto implements IPokedexEntryProto {
@@ -25464,7 +25505,7 @@ export namespace POGOProtos {
             public times_purified: number;
             public temp_evo_data: POGOProtos.Rpc.PokedexEntryProto.ITempEvoData[];
             public captured_shiny_forms: POGOProtos.Rpc.PokemonDisplayProto.Form[];
-            public egceabiaoec: { [k: string]: POGOProtos.Rpc.PokedexEntryProto.IPokemonCategoryData };
+            public pokemon_category_data: { [k: string]: POGOProtos.Rpc.PokedexEntryProto.IPokemonCategoryData };
             public static encode(message: POGOProtos.Rpc.IPokedexEntryProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.PokedexEntryProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.PokedexEntryProto;
@@ -30060,6 +30101,7 @@ export namespace POGOProtos {
             end_timestamp_ms?: (number|Long|null);
             is_bonus_challenge?: (boolean|null);
             referral_info?: (POGOProtos.Rpc.QuestProto.IReferralInfoProto|null);
+            branching_quest?: (POGOProtos.Rpc.IBranchingQuestProto[]|null);
         }
 
         class QuestProto implements IQuestProto {
@@ -30102,6 +30144,7 @@ export namespace POGOProtos {
             public end_timestamp_ms: (number|Long);
             public is_bonus_challenge: boolean;
             public referral_info?: (POGOProtos.Rpc.QuestProto.IReferralInfoProto|null);
+            public branching_quest: POGOProtos.Rpc.IBranchingQuestProto[];
             public Quest?: ("daily_quest"|"multi_part"|"catch_pokemon"|"add_friend"|"trade_pokemon"|"daily_buddy_affection"|"quest_walk"|"evolve_into_pokemon"|"get_stardust"|"mini_collection"|"geotargeted_quest"|"buddy_evolution_walk"|"battle");
             public static encode(message: POGOProtos.Rpc.IQuestProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.QuestProto;
@@ -30123,7 +30166,8 @@ export namespace POGOProtos {
                 TGC_TRACKING_QUEST = 7,
                 EVOLUTION_QUEST = 8,
                 TIMED_MINI_COLLECTION_QUEST = 9,
-                REFERRAL_QUEST = 10
+                REFERRAL_QUEST = 10,
+                BRANCHING_QUEST = 11
             }
 
             enum Status {
