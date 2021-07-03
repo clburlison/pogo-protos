@@ -19042,6 +19042,7 @@ export namespace POGOProtos {
             form_change_settings?: (POGOProtos.Rpc.IFormChangeSettingsProto|null);
             iap_settings?: (POGOProtos.Rpc.IStoreIapSettingsProto[]|null);
             upload_management_settings?: (POGOProtos.Rpc.IUploadManagementSettings|null);
+            raid_logging_settings?: (POGOProtos.Rpc.IRaidLoggingSettingsProto|null);
         }
 
         class GlobalSettingsProto implements IGlobalSettingsProto {
@@ -19111,6 +19112,7 @@ export namespace POGOProtos {
             public form_change_settings?: (POGOProtos.Rpc.IFormChangeSettingsProto|null);
             public iap_settings: POGOProtos.Rpc.IStoreIapSettingsProto[];
             public upload_management_settings?: (POGOProtos.Rpc.IUploadManagementSettings|null);
+            public raid_logging_settings?: (POGOProtos.Rpc.IRaidLoggingSettingsProto|null);
             public static encode(message: POGOProtos.Rpc.IGlobalSettingsProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.GlobalSettingsProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.GlobalSettingsProto;
@@ -29851,6 +29853,7 @@ export namespace POGOProtos {
             enable_quests?: (boolean|null);
             max_challenge_quests?: (number|null);
             enable_show_sponsor_name?: (boolean|null);
+            elapsed_time_ms?: (number|Long|null);
         }
 
         class QuestGlobalSettingsProto implements IQuestGlobalSettingsProto {
@@ -29858,6 +29861,7 @@ export namespace POGOProtos {
             public enable_quests: boolean;
             public max_challenge_quests: number;
             public enable_show_sponsor_name: boolean;
+            public elapsed_time_ms: (number|Long);
             public static encode(message: POGOProtos.Rpc.IQuestGlobalSettingsProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.QuestGlobalSettingsProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.QuestGlobalSettingsProto;
@@ -30563,6 +30567,20 @@ export namespace POGOProtos {
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.RaidInviteFriendsSettingsProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.RaidInviteFriendsSettingsProto;
             public static toObject(message: POGOProtos.Rpc.RaidInviteFriendsSettingsProto, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            public toJSON(): { [k: string]: any };
+        }
+
+        interface IRaidLoggingSettingsProto {
+            enabled?: (boolean|null);
+        }
+
+        class RaidLoggingSettingsProto implements IRaidLoggingSettingsProto {
+            constructor(properties?: POGOProtos.Rpc.IRaidLoggingSettingsProto);
+            public enabled: boolean;
+            public static encode(message: POGOProtos.Rpc.IRaidLoggingSettingsProto, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.RaidLoggingSettingsProto;
+            public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.RaidLoggingSettingsProto;
+            public static toObject(message: POGOProtos.Rpc.RaidLoggingSettingsProto, options?: $protobuf.IConversionOptions): { [k: string]: any };
             public toJSON(): { [k: string]: any };
         }
 
