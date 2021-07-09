@@ -22649,7 +22649,7 @@ export namespace POGOProtos {
             show_enhanced_sky?: (boolean|null);
             ob_string_map_display_settings_1?: (string|null);
             ob_string_map_display_settings_2?: (string|null);
-            ob_string_map_display_settings_3?: (string|null);
+            fx_map_visual_effect?: (string|null);
         }
 
         class MapDisplaySettingsProto implements IMapDisplaySettingsProto {
@@ -22660,7 +22660,7 @@ export namespace POGOProtos {
             public show_enhanced_sky: boolean;
             public ob_string_map_display_settings_1: string;
             public ob_string_map_display_settings_2: string;
-            public ob_string_map_display_settings_3: string;
+            public fx_map_visual_effect: string;
             public static encode(message: POGOProtos.Rpc.IMapDisplaySettingsProto, writer?: $protobuf.Writer): $protobuf.Writer;
             public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.MapDisplaySettingsProto;
             public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.MapDisplaySettingsProto;
@@ -25409,15 +25409,15 @@ export namespace POGOProtos {
 
             interface IPokedexCategoryData {
                 pokemon_category?: (POGOProtos.Rpc.PokemonCategory|null);
-                category_data_int32?: (number|null);
-                category_data_bool?: (boolean|null);
+                requirements_to_unlock?: (number|null);
+                unlocked?: (boolean|null);
             }
 
             class PokedexCategoryData implements IPokedexCategoryData {
                 constructor(properties?: POGOProtos.Rpc.PokedexCategoriesSettings.IPokedexCategoryData);
                 public pokemon_category: POGOProtos.Rpc.PokemonCategory;
-                public category_data_int32: number;
-                public category_data_bool: boolean;
+                public requirements_to_unlock: number;
+                public unlocked: boolean;
                 public static encode(message: POGOProtos.Rpc.PokedexCategoriesSettings.IPokedexCategoryData, writer?: $protobuf.Writer): $protobuf.Writer;
                 public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): POGOProtos.Rpc.PokedexCategoriesSettings.PokedexCategoryData;
                 public static fromObject(object: { [k: string]: any }): POGOProtos.Rpc.PokedexCategoriesSettings.PokedexCategoryData;
@@ -29649,7 +29649,8 @@ export namespace POGOProtos {
                 WITH_ENCOUNTER_TYPE = 40,
                 WITH_COMBAT_TYPE = 41,
                 WITH_GEOTARGETED_POI = 42,
-                WITH_ITEM_TYPE = 43
+                WITH_ITEM_TYPE = 43,
+                WITH_RAID_ELAPSED_TIME = 44
             }
         }
 
